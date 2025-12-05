@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>ProBridge – Communication & Marketing Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ProBridge – Agence de contenu vidéo et marketing digital spécialisée TikTok, Meta et campagnes publicitaires orientées rentabilité pour commerces et franchises." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5efe4;
+      --dark: #262018;
+      --accent: #c59a5a;
+      --light: #ffffff;
+      --border-soft: #e0d3c2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245, 239, 228, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .nav-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-brand-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+    }
+
+    .nav-brand-text span:last-child {
+      font-size: 0.78rem;
+      opacity: 0.7;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      border-radius: 999px;
+      border: 1px solid var(--dark);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--dark);
+      color: var(--light);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.1s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: var(--dark);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 2.5rem auto 2rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      font-size: 0.98rem;
+      max-width: 32rem;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--dark);
+      color: var(--light);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s;
+    }
+
+    .btn-primary:hover {
+      background: #15100c;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--dark);
+      background: transparent;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-ghost:hover {
+      background: var(--dark);
+      color: var(--light);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .hero-card {
+      background: var(--light);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 1.5rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    }
+
+    .hero-card-logo {
+      width: 90px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero-card h2 {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-card p {
+      font-size: 0.85rem;
+      text-align: center;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .metric {
+      border-radius: 12px;
+      padding: 0.7rem 0.8rem;
+      background: #f7f1e6;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    .metric-value {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 1.7rem;
+      max-width: 32rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      background: var(--light);
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      padding: 1.1rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .service-card p {
+      font-size: 0.86rem;
+      opacity: 0.8;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1.3rem;
+    }
+
+    .pricing-card {
+      background: var(--light);
+      border-radius: 18px;
+      border: 1px solid var(--border-soft);
+      padding: 1.4rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .pricing-name { font-weight: 600; }
+
+    .pricing-price {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .pricing-price span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    .pricing-list {
+      list-style: none;
+      font-size: 0.86rem;
+      opacity: 0.9;
+    }
+
+    .pricing-list li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    .pricing-footnote {
+      font-size: 0.78rem;
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+
+    .contact-box {
+      background: var(--dark);
+      color: var(--light);
+      border-radius: 18px;
+      padding: 1.6rem 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0,1.5fr) minmax(0,1fr);
+      gap: 1.3rem;
+      align-items: center;
+    }
+
+    .contact-box h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-box p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .contact-info { font-size: 0.9rem; }
+    .contact-info div { margin-bottom: 0.3rem; }
+
+    .contact-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 0.2rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      opacity: 0.7;
+      padding: 2rem 1.5rem 1.5rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: minmax(0,1fr); }
+      .hero-card { order: -1; }
+      .services-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .pricing-grid { grid-template-columns: minmax(0,1fr); }
+      .contact-box { grid-template-columns: minmax(0,1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .nav { flex-wrap: wrap; justify-content: center; }
+      .nav-links { display: none; }
+      .services-grid { grid-template-columns: minmax(0,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="nav-left">
+      <div class="nav-logo">
+        <img src= "C:\Users\rayan\Desktop\lyadsmarketing\ProBridge.png"alt="Logo ProBridge" />
+      </div>
+      <div class="nav-brand-text">
+        <span>PROBRIDGE</span>
+        <span>Content • Ads • Franchise</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Offres</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Parler de votre projet</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="hero-kicker">Vidéo • Meta & TikTok • Franchise</div>
+      <h1>On construit des <span>ponts</span> entre votre marque et vos clients.</h1>
+      <p>
+        ProBridge accompagne les commerces et franchises avec du contenu vidéo performant,
+        des campagnes sur le groupe Meta et TikTok, et un vrai suivi commercial orienté rentabilité.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Réserver un appel découverte
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+          Voir les offres
+        </button>
+      </div>
+      <div class="hero-note">
+        Minimum <strong>10 000 vues en moyenne</strong> par vidéo. La plupart de nos contenus dépassent
+        les <strong>20 000 à 50 000 vues</strong>.
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <div class="hero-card-logo">
+        <img src= "C:\Users\rayan\Desktop\lyadsmarketing\ProBridge.png"alt="Logo ProBridge" />
+      </div>
+      <h2>ProBridge Studio</h2>
+      <p>Liège • Contenu vidéo & consultance commerciale pour commerces, restaurants et franchises.</p>
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="metric-label">Vues moyennes / vidéo</div>
+          <div class="metric-value">10K–50K</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Plateformes</div>
+          <div class="metric-value">TikTok · Meta · Shorts</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Mode de travail</div>
+          <div class="metric-value">Performance-first</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Zone</div>
+          <div class="metric-value">Liège & alentours</div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Ce qu’on fait pour vous</h2>
+    <p class="section-subtitle">
+      Une équipe légère, orientée terrain : on mélange création de contenu, consultance commerciale
+      et stratégie franchise pour créer de la visibilité qui se transforme en chiffre.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Contenu vidéo court</h3>
+        <p>Scripts, tournage et montage de vidéos TikTok / Reels / Shorts adaptées à votre image et à l’algorithme.</p>
+      </div>
+      <div class="service-card">
+        <h3>Stratégie réseaux & Ads</h3>
+        <p>Plan éditorial + campagnes sur le groupe Meta (Facebook & Instagram) et TikTok pour générer trafic et réservations.</p>
+      </div>
+      <div class="service-card">
+        <h3>Consultance commerciale</h3>
+        <p>Accompagnement sur vos offres, promotions, upsell, argumentaire de vente et rentabilité globale.</p>
+      </div>
+      <div class="service-card">
+        <h3>Accompagnement franchise</h3>
+        <p>Cadre de communication pour les franchises, ouverture de nouveaux points de vente, harmonisation de l’image.</p>
+      </div>
+      <div class="service-card">
+        <h3>Production agile</h3>
+        <p>Équipe d’étudiants formés (tournage & montage), payés 15€/h, pour produire vite et souvent tout en gardant la qualité.</p>
+      </div>
+      <div class="service-card">
+        <h3>Reporting & optimisation</h3>
+        <p>Suivi des chiffres (vues, clics, leads, visites) et ajustements continus pour améliorer les résultats mois après mois.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2 class="section-title">Tarifs & modèles de collaboration</h2>
+    <p class="section-subtitle">
+      On garde une base horaire claire pour la consultance et la production, et on ajoute des packs
+      orientés performance pour les commerces qui veulent aller plus loin.
+    </p>
+
+    <div class="pricing-grid">
+      <article class="pricing-card">
+        <div class="pricing-name">Consultance commerciale & franchise</div>
+        <div class="pricing-price">
+          80€ / heure <span>HT – sur site ou en visio</span>
+        </div>
+        <ul class="pricing-list">
+          <li>Audit de l’offre et de la communication</li>
+          <li>Construction / optimisation de vos offres commerciales</li>
+          <li>Accompagnement franchise (process, image, messages)</li>
+          <li>Coaching équipe vente & terrain</li>
+        </ul>
+        <p class="pricing-footnote">
+          Possibilité de forfait demi-journée ou journée complète pour les déplacements.
+        </p>
+      </article>
+
+      <article class="pricing-card">
+        <div class="pricing-name">Production vidéo & contenu</div>
+        <div class="pricing-price">
+          50€ / heure <span>HT – tournage & montage</span>
+        </div>
+        <ul class="pricing-list">
+          <li>Préparation des scripts & idées de vidéos</li>
+          <li>Tournage sur place (équipe légère)</li>
+          <li>Montage optimisé pour TikTok, Reels, Shorts</li>
+          <li>Adaptation multi-plateformes (Meta, TikTok, etc.)</li>
+        </ul>
+        <p class="pricing-footnote">
+          Journée de tournage complète possible, avec batch de contenus pour tout le mois.
+        </p>
+      </article>
+
+      <article class="pricing-card">
+        <div class="pricing-name">Pack Rentabilité</div>
+        <div class="pricing-price">
+          Sur devis <span>+ % sur le chiffre généré</span>
+        </div>
+        <ul class="pricing-list">
+          <li>Création de plusieurs vidéos / mois</li>
+          <li>Gestion des campagnes Meta & TikTok</li>
+          <li>Optimisation sur la base des chiffres réels</li>
+          <li>Rémunération partiellement liée à la performance</li>
+        </ul>
+        <p class="pricing-footnote">
+          Idéal pour les commerces qui veulent limiter le risque et tester une approche performance-first.
+        </p>
+      </article>
+
+      <article class="pricing-card">
+        <div class="pricing-name">Pack Premium – ProBridge 4000</div>
+        <div class="pricing-price">
+          4 000€ / mois <span>HT – tout compris</span>
+        </div>
+        <ul class="pricing-list">
+          <li>Stratégie globale contenu + Ads</li>
+          <li>Multiples tournages et vidéos / mois</li>
+          <li>Gestion complète des campagnes publicitaires</li>
+          <li>Suivi régulier + accompagnement franchise</li>
+        </ul>
+        <p class="pricing-footnote">
+          Pensé pour les marques et franchises qui veulent une équipe marketing dédiée sans recruter en interne.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <div>
+        <div class="contact-tag">Parlons concret</div>
+        <h2>On regarde vos chiffres, vos offres et ce qu’on peut débloquer ensemble.</h2>
+        <p>
+          Expliquez votre situation actuelle (trafic, vues, ventes) et vos objectifs.
+          On revient vers vous avec une proposition simple : base horaire, pack ou modèle à la performance.
+        </p>
+      </div>
+      <div class="contact-info">
+        <div><strong>Email :</strong> contact@probridge.agency</div>
+        <div><strong>Téléphone :</strong> +32 497358816</div>
+        <div><strong>Instagram / TikTok :</strong> @probridge_</div>
+        <div style="margin-top:0.6rem;">
+          Vous pouvez aussi envoyer directement un DM ou un vocal, on vous répond dans la journée.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> ProBridge – Communication & Performance. Tous droits réservés.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
